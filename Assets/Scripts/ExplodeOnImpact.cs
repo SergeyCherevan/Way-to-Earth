@@ -1,18 +1,10 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class Meteor : MonoBehaviour
+public class ExplodeOnImpact : MonoBehaviour
 {
-    public Rigidbody2D rigidBody;
-
     public GameObject bangPrefab;
-
-    public float score;
-
-    void Update()
-    {
-        rigidBody.velocity = transform.right * score;
-    }
 
     void OnTriggerEnter2D(Collider2D collision)
     {

@@ -8,10 +8,7 @@ public class Rocket : MonoBehaviour
     public bool isMoving;
     public float vericalSpeed;
 
-    void Start()
-    {
-        
-    }
+    public GameObject hpLine;
 
     void Update()
     {
@@ -50,9 +47,9 @@ public class Rocket : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.TryGetComponent<Meteor>(out _))
+        if (collision.CompareTag("Meteor"))
         {
-            HP_Line.instanse.ChangeHP(-1);
+            hpLine.GetComponent<HP_Line>().ChangeHP(-1);
         }
     }
 }

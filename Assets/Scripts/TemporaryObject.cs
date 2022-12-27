@@ -6,8 +6,7 @@ public class TemporaryObject : MonoBehaviour
 {
     public float timeToDelete;
 
-
-    private float timer;
+    float timer;
 
     void Start()
     {

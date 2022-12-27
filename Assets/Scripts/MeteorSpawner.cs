@@ -5,14 +5,10 @@ public class MeteorSpawner : MonoBehaviour
     public GameObject meteorPrefab;
     public float timeToSpan;
 
-
-    private float timer;
+    float timer;
     float deflectionAngle { get => Mathf.Atan2(MainCamera.MaxY, 2 * MainCamera.MaxX) / Mathf.PI * 180; }
 
-    void Start()
-    {
-
-    }
+    public GameObject scoreCounter;
 
     void Update()
     {
@@ -27,6 +23,7 @@ public class MeteorSpawner : MonoBehaviour
 
             GameObject meteor = Instantiate(meteorPrefab, transform.position + Vector3.up * randY, Quaternion.identity);
             meteor.transform.Rotate(0, 0, 180 + randAngle);
+            meteor.GetComponent<DeleteOutOfMap>().eventHandler = scoreCounter;
 
             timer = timeToSpan;
         }

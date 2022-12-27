@@ -6,11 +6,6 @@ public class RotatingObject : MonoBehaviour
 {
     public float angleVelocity;
 
-    void Start()
-    {
-        
-    }
-
     void Update()
     {
         transform.Rotate(new Vector3(0, 0, angleVelocity));
