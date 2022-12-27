@@ -1,43 +1,48 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Rocket : MonoBehaviour
 {
     public GameObject fire;
+    public Rigidbody2D rigidBody;
 
     public bool isMoving;
     public float vericalSpeed;
 
     void Start()
     {
-        isMoving = false;
+        
     }
 
     void Update()
     {
-        isMoving = false;
+        MovingMethod();        
+    }
 
-        if (Input.GetKey(KeyCode.W)|| Input.GetKey(KeyCode.UpArrow))
+    void MovingMethod()
+    {
+        isMoving = false;
+        rigidBody.velocity = Vector3.zero;
+
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
         {
-            transform.Translate(transform.up * vericalSpeed * Time.deltaTime);
-            if (transform.position.y > 5)
-            {
-                transform.position = new Vector2(transform.position.x, 5);
-            }
+            rigidBody.velocity = transform.up * vericalSpeed;
+
+            isMoving = true;
+        }
+        if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
+        {
+            rigidBody.velocity = -transform.up * vericalSpeed;
 
             isMoving = true;
         }
 
-        if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
+        if (transform.position.y > 5)
         {
-            transform.Translate(-transform.up * vericalSpeed * Time.deltaTime);
-            if (transform.position.y < -5)
-            {
-                transform.position = new Vector2(transform.position.x, -5);
-            }
-
-            isMoving = true;
+            transform.position = new Vector2(transform.position.x, 5);
+        }
+        if (transform.position.y < -5)
+        {
+            transform.position = new Vector2(transform.position.x, -5);
         }
 
         fire.SetActive(isMoving);

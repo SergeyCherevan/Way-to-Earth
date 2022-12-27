@@ -25,7 +25,7 @@ public class MeteorSpawner : MonoBehaviour
             float randY = Random.Range(MainCamera.MinY, MainCamera.MaxY);
             float randAngle = Random.Range(-deflectionAngle, deflectionAngle);
 
-            GameObject meteor = Instantiate(meteorPrefab, transform.position + Vector3.up * randY, transform.rotation);
+            GameObject meteor = Instantiate(meteorPrefab, transform.position + Vector3.up * randY, Quaternion.identity);
             meteor.transform.Rotate(0, 0, 180 + randAngle);
 
             timer = timeToSpan;
