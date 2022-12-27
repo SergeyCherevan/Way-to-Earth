@@ -18,10 +18,5 @@ public class Meteor : MonoBehaviour
     {
         GameObject bang = Instantiate(bangPrefab, gameObject.transform.position, Quaternion.identity);
         Destroy(gameObject);
-
-        if (collision.TryGetComponent<Rocket>(out _))
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        }
     }
 }

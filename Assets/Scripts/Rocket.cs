@@ -15,10 +15,10 @@ public class Rocket : MonoBehaviour
 
     void Update()
     {
-        MovingMethod();        
+        Move();        
     }
 
-    void MovingMethod()
+    void Move()
     {
         isMoving = false;
         rigidBody.velocity = Vector3.zero;
@@ -46,5 +46,13 @@ public class Rocket : MonoBehaviour
         }
 
         fire.SetActive(isMoving);
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.TryGetComponent<Meteor>(out _))
+        {
+            HP_Line.instanse.ChangeHP(-1);
+        }
     }
 }
