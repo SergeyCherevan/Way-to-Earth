@@ -22,7 +22,7 @@ public class MeteorSpawner : MonoBehaviour
             float randAngle = Random.Range(-deflectionAngle, deflectionAngle);
 
             GameObject meteor = Instantiate(meteorPrefab, transform.position + Vector3.up * randY, Quaternion.identity);
-            meteor.transform.Rotate(0, 0, 180 + randAngle);
+            meteor.transform.Rotate(0, 0, randAngle);
             meteor.GetComponent<DeleteOutOfMap>().eventHandler = scoreCounter;
 
             timer = timeToSpan;

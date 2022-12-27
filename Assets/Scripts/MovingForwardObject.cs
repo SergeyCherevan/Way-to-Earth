@@ -10,6 +10,6 @@ public class MovingForwardObject : MonoBehaviour
 
     void Update()
     {
-        rigidBody.velocity = transform.right * score;
+        rigidBody.velocity = -transform.right * score;
     }
 }
