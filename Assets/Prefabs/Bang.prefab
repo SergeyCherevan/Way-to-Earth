@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2994453206179601860}
   - component: {fileID: 662067834381133041}
+  - component: {fileID: -7269381490869021874}
+  - component: {fileID: -1331385202247841595}
   m_Layer: 0
   m_Name: Bang
   m_TagString: Untagged
@@ -84,3 +86,29 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-7269381490869021874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7953547002441926130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 309c27e4c1c014244b3fecf6ec19e488, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeToDelete: 0.5
+--- !u!114 &-1331385202247841595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7953547002441926130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9230e792b61ebf4e9d71e5dd0637cea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  angleVelocity: 0.5
