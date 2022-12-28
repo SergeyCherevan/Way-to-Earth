@@ -289,6 +289,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   miniRocketPrefab: {fileID: 3584253129882909402, guid: b301cfcaf5353ce44aa6ecc5f69985c2, type: 3}
+  timeToSpan: 0.25
   includedObject: {fileID: 0}
 --- !u!1 &106843568
 GameObject:
