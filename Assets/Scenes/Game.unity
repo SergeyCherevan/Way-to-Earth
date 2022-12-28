@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 79810327}
   - component: {fileID: 79810326}
   - component: {fileID: 79810328}
+  - component: {fileID: 79810331}
   - component: {fileID: 79810329}
   - component: {fileID: 79810330}
   m_Layer: 0
@@ -275,6 +276,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &79810331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 79810325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53773b6ef7f5cf5408dd8ac850b12855, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  miniRocketPrefab: {fileID: 3584253129882909402, guid: b301cfcaf5353ce44aa6ecc5f69985c2, type: 3}
+  includedObject: {fileID: 0}
 --- !u!1 &106843568
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,7 +8,7 @@ public class LeftMovingObject : MonoBehaviour
 
     public float score;
 
-    void Update()
+    void Start()
     {
         rigidBody.velocity = -transform.right * score;
     }

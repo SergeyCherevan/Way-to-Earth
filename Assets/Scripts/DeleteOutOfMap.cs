@@ -8,9 +8,13 @@ public class DeleteOutOfMap : MonoBehaviour
 
     void Update()
     {
-        if (transform.position.x < MainCamera.MinX)
+        if (transform.position.x < MainCamera.MinX || transform.position.x > MainCamera.MaxX ||
+            transform.position.y < MainCamera.MinY || transform.position.y > MainCamera.MaxY)
         {
-            eventHandler.SendMessage("GameObjectDeletedByOutOfMap", gameObject);
+            if (eventHandler != null)
+            {
+                eventHandler.SendMessage("GameObjectDeletedByOutOfMap", gameObject);
+            }
             Destroy(gameObject);
         }
     }
