@@ -29,7 +29,7 @@ public class Spawner : MonoBehaviour
                 deleteOutOfMap.eventHandler = includedObject;
             }
 
-            if (go.GetComponent<Heart>() is Heart heart)
+            if (go.GetComponent<HP_Bag>() is HP_Bag heart)
             {
                 heart.hpLine = includedObject;
             }
