@@ -8,6 +8,6 @@ public class RotatingObject : MonoBehaviour
 
     void Update()
     {
-        transform.Rotate(new Vector3(0, 0, angleVelocity));
+        transform.Rotate(new Vector3(0, 0, angleVelocity * Time.deltaTime));
     }
 }

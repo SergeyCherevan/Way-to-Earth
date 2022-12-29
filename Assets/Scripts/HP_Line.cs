@@ -8,22 +8,25 @@ public class HP_Line : MonoBehaviour
     public GameObject heartPrefab;
     public List<GameObject> hearts;
 
-    public int maxHP;
+    public int startHP;
     public int HP;
+
+    public GameObject gameManager;
 
     void Start()
     {
-        HP = maxHP;
+        startHP = hearts.Count;
+        HP = startHP;
 
-        hearts = new List<GameObject>(maxHP);
-        for (int i = 0; i < maxHP; i++)
-        {
-            hearts.Add(
-                Instantiate(heartPrefab, transform.position, transform.rotation)
-            );
-            hearts[i].transform.SetParent(gameObject.transform);
-            hearts[i].transform.Translate(new Vector3(i, 0, 0));
-        }
+        //hearts = new List<GameObject>(startHP);
+        //for (int i = 0; i < startHP; i++)
+        //{
+        //    hearts.Add(
+        //        Instantiate(heartPrefab, transform.position, transform.rotation)
+        //    );
+        //    hearts[i].transform.SetParent(gameObject.transform);
+        //    hearts[i].transform.Translate(new Vector3(i, 0, 0));
+        //}
     }
 
     public void ChangeHP(int addendum)
@@ -53,7 +56,7 @@ public class HP_Line : MonoBehaviour
 
         if (HP == 0)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            gameManager.GetComponent<GameManager>().Lose();
         }
     }
 }
